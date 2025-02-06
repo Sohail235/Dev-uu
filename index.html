@@ -3,99 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking Techniques</title>
+    <title>Anime Hacking Info</title>
     <style>
         body {
-            background-color: black;
-            color: green;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: relative;
+            background-image: url('anime-background.jpg');
+            background-size: cover;
+            animation: move 10s infinite linear;
         }
-        .banner {
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            color: red;
-            background: linear-gradient(to right, red, yellow, green, blue, purple);
-            padding: 20px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            padding: 20px;
+        @keyframes move {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
         }
         .box {
-            background-color: rgba(0, 255, 0, 0.7);
-            border: 2px solid red;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .box:hover {
-            transform: scale(1.05);
-        }
-        @keyframes falling {
-            0% { top: -10%; }
-            100% { top: 100%; }
-        }
-        .falling-gun {
-            position: absolute;
-            width: 50px;
-            animation: falling 5s infinite;
+            width: 200px;
+            height: 150px;
+            margin: 20px;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="banner">Author: Sohail Khan</div>
-    <div class="container">
-        <div class="box" onclick="window.location='https://www.hackingtechnique1.com'">Technique 1: SQL Injection</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique2.com'">Technique 2: Phishing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique3.com'">Technique 3: Cross-Site Scripting</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique4.com'">Technique 4: Man-in-the-Middle</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique5.com'">Technique 5: Denial of Service</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique6.com'">Technique 6: Password Cracking</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique7.com'">Technique 7: Malware</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique8.com'">Technique 8: Social Engineering</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique9.com'">Technique 9: Ransomware</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique10.com'">Technique 10: Keylogging</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique11.com'">Technique 11: Network Sniffing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique12.com'">Technique 12: Session Hijacking</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique13.com'">Technique 13: Drive-by Downloads</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique14.com'">Technique 14: Credential Stuffing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique15.com'">Technique 15: Zero-Day Exploits</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique16.com'">Technique 16: DNS Spoofing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique17.com'">Technique 17: Clickjacking</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique18.com'">Technique 18: Eavesdropping</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique19.com'">Technique 19: Rogue Software</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique20.com'">Technique 20: Web Scraping</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique21.com'">Technique 21: API Exploitation</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique22.com'">Technique 22: Bluetooth Hacking</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique23.com'">Technique 23: IoT Vulnerabilities</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique24.com'">Technique 24: Physical Security</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique25.com'">Technique 25: Wireless Attacks</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique26.com'">Technique 26: Code Injection</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique27.com'">Technique 27: Buffer Overflow</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique28.com'">Technique 28: Web Shells</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique29.com'">Technique 29: Credential Harvesting</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique30.com'">Technique 30: Supply Chain Attacks</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique31.com'">Technique 31: Domain Spoofing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique32.com'">Technique 32: Web Application Attacks</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique33.com'">Technique 33: Email Spoofing</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique34.com'">Technique 34: Data Breaches</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique35.com'">Technique 35: Insider Threats</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique36.com'">Technique 36: Web Vulnerability Scanning</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique37.com'">Technique 37: Network Attacks</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique38.com'">Technique 38: Data Exfiltration</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique39.com'">Technique 39: Social Media Exploits</div>
-        <div class="box" onclick="window.location='https://www.hackingtechnique40.com'">Technique 40: Cloud Security Risks</div>
-    </div>
-    <img src="gun.png" class="falling-gun" style="left: 10%; animation-delay: 0s;">
-    <img src="gun.png" class="falling-gun" style="left: 30%; animation-delay: 1s;">
-    <img src="gun.png" class="falling-gun" style="left: 50%; animation-delay: 2s;">
-    <img src="gun.png" class="falling-gun" style="left: 70%; animation-delay: 3s;">
-    <img src="gun.png" class="falling-gun" style="left: 90%; animation-delay: 4s;">
-</body>
-</html>
+    <div class="box">Hacking is the act of exploiting vulnerabilities in systems.</div>
+    <div class="box">Ethical hacking helps organizations improve their security.</div>
+    <div class="box">Phishing is a common method used by hackers.</div>
+    <div class="box">Malware can disrupt operations and steal data.</div>
+    <div class="box">Penetration testing simulates attacks to find weaknesses.</div>
+    <div class="box">Social engineering manipulates people into revealing information.</div>
+    <div class="box">Ransomware encrypts files and demands payment for access.</div>
+    <
