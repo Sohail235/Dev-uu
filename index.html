@@ -1,39 +1,65 @@
-# WhatsApp Clone
+# Snake Game
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Clone</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Snake Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>WhatsApp Clone</h1>
-        </header>
-        <div class="chat-list">
-            <div class="chat-item">
-                <div class="chat-avatar"></div>
-                <div class="chat-info">
-                    <h2>Contact Name</h2>
-                    <p>Last message preview...</p>
-                </div>
-            </div>
-            <!-- Repeat chat-item for more contacts -->
-        </div>
-        <div class="chat-window">
-            <div class="messages">
-                <div class="message sent">Hello!</div>
-                <div class="message received">Hi there!</div>
-                <!-- Repeat message for more chat history -->
-            </div>
-            <div class="message-input">
-                <input type="text" placeholder="Type a message...">
-                <button>Send</button>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let snake = [{ x: 10, y: 10 }];
+        let direction = { x: 0, y: 0 };
+        let food = { x: 15, y: 15 };
+        let score = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawSnake();
+            drawFood();
+            moveSnake();
+            checkCollision();
+        }
+
+        function drawSnake() {
+            ctx.fillStyle = 'green';
+            snake.forEach(segment => {
+                ctx.fillRect(segment.x * 20, segment.y * 20, 18, 18);
+            });
+        }
+
+        function drawFood() {
+            ctx.fillStyle = 'red';
+            ctx.fillRect(food.x * 20, food.y * 20, 18, 18);
+        }
+
+        function moveSnake() {
+            const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+            snake.unshift(head);
+            if (head.x === food.x && head.y === food.y) {
+                score++;
+                placeFood();
+            } else {
+                snake.pop();
+            }
+        }
+
+        function place
