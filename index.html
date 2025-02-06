@@ -8,91 +8,112 @@
         body {
             background-color: black;
             color: green;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
         }
         .banner {
-            background: linear-gradient(to right, red, yellow, green);
-            padding: 20px;
-            font-size: 24px;
+            text-align: center;
+            font-size: 2em;
             font-weight: bold;
+            color: red;
+            background: linear-gradient(to right, red, yellow, green, blue, purple);
+            padding: 20px;
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             gap: 10px;
             padding: 20px;
         }
         .box {
-            background-color: red;
-            color: white;
-            padding: 20px;
+            background-color: rgba(255, 0, 0, 0.7);
             border: 2px solid green;
+            padding: 20px;
+            text-align: center;
             cursor: pointer;
             transition: transform 0.2s;
         }
         .box:hover {
             transform: scale(1.05);
         }
+        @keyframes fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+        .petal {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: pink;
+            opacity: 0.5;
+            animation: fall 5s infinite;
+        }
     </style>
 </head>
 <body>
     <div class="banner">Author: Sohail Khan</div>
     <div class="container">
-        <div class="box" onclick="alert('Information about SQL Injection')">SQL Injection</div>
         <div class="box" onclick="alert('Information about Phishing')">Phishing</div>
-        <div class="box" onclick="alert('Information about DDoS Attack')">DDoS Attack</div>
-        <div class="box" onclick="alert('Information about Man-in-the-Middle')">Man-in-the-Middle</div>
-        <div class="box" onclick="alert('Information about Ransomware')">Ransomware</div>
-        <div class="box" onclick="alert('Information about Keylogging')">Keylogging</div>
-        <div class="box" onclick="alert('Information about Social Engineering')">Social Engineering</div>
-        <div class="box" onclick="alert('Information about Malware')">Malware</div>
+        <div class="box" onclick="alert('Information about SQL Injection')">SQL Injection</div>
         <div class="box" onclick="alert('Information about Cross-Site Scripting')">XSS</div>
+        <div class="box" onclick="alert('Information about DDoS Attack')">DDoS Attack</div>
+        <div class="box" onclick="alert('Information about Man-in-the-Middle')">MITM</div>
+        <div class="box" onclick="alert('Information about Keylogging')">Keylogging</div>
+        <div class="box" onclick="alert('Information about Ransomware')">Ransomware</div>
+        <div class="box" onclick="alert('Information about Malware')">Malware</div>
+        <div class="box" onclick="alert('Information about Social Engineering')">Social Engineering</div>
         <div class="box" onclick="alert('Information about Credential Stuffing')">Credential Stuffing</div>
         <div class="box" onclick="alert('Information about Zero-Day Exploit')">Zero-Day Exploit</div>
-        <div class="box" onclick="alert('Information about DNS Spoofing')">DNS Spoofing</div>
         <div class="box" onclick="alert('Information about Session Hijacking')">Session Hijacking</div>
+        <div class="box" onclick="alert('Information about DNS Spoofing')">DNS Spoofing</div>
         <div class="box" onclick="alert('Information about Drive-By Downloads')">Drive-By Downloads</div>
         <div class="box" onclick="alert('Information about Clickjacking')">Clickjacking</div>
+        <div class="box" onclick="alert('Information about Eavesdropping')">Eavesdropping</div>
+        <div class="box" onclick="alert('Information about Rogue Software')">Rogue Software</div>
         <div class="box" onclick="alert('Information about Botnets')">Botnets</div>
         <div class="box" onclick="alert('Information about Web Shells')">Web Shells</div>
-        <div class="box" onclick="alert('Information about SQL Injection')">SQL Injection</div>
-        <div class="box" onclick="alert('Information about Phishing')">Phishing</div>
-        <div class="box" onclick="alert('Information about DDoS Attack')">DDoS Attack</div>
-        <div class="box" onclick="alert('Information about Man-in-the-Middle')">Man-in-the-Middle</div>
-        <div class="box" onclick="alert('Information about Ransomware')">Ransomware</div>
-        <div class="box" onclick="alert('Information about Keylogging')">Keylogging</div>
-        <div class="box" onclick="alert('Information about Social Engineering')">Social Engineering</div>
-        <div class="box" onclick="alert('Information about Malware')">Malware</div>
-        <div class="box" onclick="alert('Information about Cross-Site Scripting')">XSS</div>
-        <div class="box" onclick="alert('Information about Credential Stuffing')">Credential Stuffing</div>
-        <div class="box" onclick="alert('Information about Zero-Day Exploit')">Zero-Day Exploit</div>
-        <div class="box" onclick="alert('Information about DNS Spoofing')">DNS Spoofing</div>
-        <div class="box" onclick="alert('Information about Session Hijacking')">Session Hijacking</div>
-        <div class="box" onclick="alert('Information about Drive-By Downloads')">Drive-By Downloads</div>
-        <div class="box" onclick="alert('Information about Clickjacking')">Clickjacking</div>
-        <div class="box" onclick="alert('Information about Botnets')">Botnets</div>
-        <div class="box" onclick="alert('Information about Web Shells')">Web Shells</div>
-        <div class="box" onclick="alert('Information about SQL Injection')">SQL Injection</div>
-        <div class="box" onclick="alert('Information about Phishing')">Phishing</div>
-        <div class="box" onclick="alert('Information about DDoS Attack')">DDoS Attack</div>
-        <div class="box" onclick="alert('Information about Man-in-the-Middle')">Man-in-the-Middle</div>
-        <div class="box" onclick="alert('Information about Ransomware')">Ransomware</div>
-        <div class="box" onclick="alert('Information about Keylogging')">Keylogging</div>
-        <div class="box" onclick="alert('Information about Social Engineering')">Social Engineering</div>
-        <div class="box" onclick="alert('Information about Malware')">Malware</div>
-        <div class="box" onclick="alert('Information about Cross-Site Scripting')">XSS</div>
-        <div class="box" onclick="alert('Information about Credential Stuffing')">Credential Stuffing</div>
-        <div class="box" onclick="alert('Information about Zero-Day Exploit')">Zero-Day Exploit</div>
-        <div class="box" onclick="alert('Information about DNS Spoofing')">DNS Spoofing</div>
-        <div class="box" onclick="alert('Information about Session Hijacking')">Session Hijacking</div>
-        <div class="box" onclick="alert('Information about Drive-By Downloads')">Drive-By Downloads</div>
-        <div class="box" onclick="alert('Information about Clickjacking')">Clickjacking</div>
-        <div class="box" onclick="alert('Information about Botnets')">Botnets</div>
-        <div class="box" onclick="alert('Information about Web Shells')">Web Shells</div>
+        <div class="box" onclick="alert('Information about Credential Harvesting')">Credential Harvesting</div>
+        <div class="box" onclick="alert('Information about Network Sniffing')">Network Sniffing</div>
+        <div class="box" onclick="alert('Information about Wireless Attacks')">Wireless Attacks</div>
+        <div class="box" onclick="alert('Information about SQL Map')">SQL Map</div>
+        <div class="box" onclick="alert('Information about Nmap')">Nmap</div>
+        <div class="box" onclick="alert('Information about Metasploit')">Metasploit</div>
+        <div class="box" onclick="alert('Information about Wireshark')">Wireshark</div>
+        <div class="box" onclick="alert('Information about Burp Suite')">Burp Suite</div>
+        <div class="box" onclick="alert('Information about Aircrack-ng')">Aircrack-ng</div>
+        <div class="box" onclick="alert('Information about John the Ripper')">John the Ripper</div>
+        <div class="box" onclick="alert('Information about Hashcat')">Hashcat</div>
+        <div class="box" onclick="alert('Information about Sniffing Tools')">Sniffing Tools</div>
+        <div class="box" onclick="alert('Information about Exploit Kits')">Exploit Kits</div>
+        <div class="box" onclick="alert('Information about Phishing Kits')">Phishing Kits</div>
+        <div class="box" onclick="alert('Information about Web Application Firewalls')">WAF</div>
+        <div class="box" onclick="alert('Information about VPNs')">VPNs</div>
+        <div class="box" onclick="alert('Information about Proxies')">Proxies</div>
+        <div class="box" onclick="alert('Information about Firewalls')">Firewalls</div>
+        <div class="box" onclick="alert('Information about Antivirus Software')">Antivirus</div>
+        <div class="box" onclick="alert('Information about Security Audits')">Security Audits</div>
+        <div class="box" onclick="alert('Information about Penetration Testing')">Pen Testing</div>
+        <div class="box" onclick="alert('Information about Ethical Hacking')">Ethical Hacking</div>
+        <div class="box" onclick="alert('Information about Cybersecurity')">Cybersecurity</div>
+        <div class="box" onclick="alert('Information about Information Security')">InfoSec</div>
+        <div class="box" onclick="alert('Information about Data Breaches')">Data Breaches</div>
+        <div class="box" onclick="alert('Information about Incident Response')">Incident Response</div>
+        <div class="box" onclick="alert('Information about Threat Intelligence')">Threat Intelligence</div>
+        <div class="box" onclick="alert('Information about Vulnerability Management')">Vuln Management</div>
+        <div class="box" onclick="alert('Information about Risk Assessment')">Risk Assessment</div>
+        <div class="box" onclick="alert('Information about Compliance')">Compliance</div>
+        <div class="box" onclick="alert('Information about Security Policies')">Security Policies</div>
+        <div class="box" onclick="alert('Information about Security Awareness Training')">Security Training</div>
     </div>
-    <footer>
-        <p>For more information, visit <a href="https://www.hackingtutorials.org" style="color: green;">Hacking Tutorials</a> or <a href="https://www.cyber.gov.au" style="color: green;">Cyber.gov.au</a>.</p>
-    </footer>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            let petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 5 + 3 + 's';
+            document.body.appendChild(petal);
+        }
+    </script>
 </body>
 </html>
