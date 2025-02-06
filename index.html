@@ -1,4 +1,4 @@
-
+# WhatsApp Clone
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,30 +9,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>WhatsApp Clone</h1>
-    </header>
-    <main>
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2>Chat with Friends</h2>
+    <div class="container">
+        <header class="header">
+            <h1>WhatsApp Clone</h1>
+        </header>
+        <div class="chat-list">
+            <div class="chat-item">
+                <div class="chat-avatar"></div>
+                <div class="chat-info">
+                    <h2>Contact Name</h2>
+                    <p>Last message preview...</p>
+                </div>
             </div>
-            <div class="chat-messages">
-                <div class="message sent">
-                    <p>Hello!</p>
-                </div>
-                <div class="message received">
-                    <p>Hi there!</p>
-                </div>
+            <!-- Repeat chat-item for more contacts -->
+        </div>
+        <div class="chat-window">
+            <div class="messages">
+                <div class="message sent">Hello!</div>
+                <div class="message received">Hi there!</div>
+                <!-- Repeat message for more chat history -->
             </div>
             <div class="message-input">
                 <input type="text" placeholder="Type a message...">
                 <button>Send</button>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2023 WhatsApp Clone</p>
-    </footer>
+    </div>
 </body>
 </html>
