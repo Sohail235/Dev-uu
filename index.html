@@ -8,7 +8,7 @@
         body {
             background-color: black;
             color: green;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
             overflow: hidden;
             position: relative;
         }
@@ -17,18 +17,18 @@
             font-size: 2em;
             font-weight: bold;
             color: red;
-            background: linear-gradient(to right, red, green);
+            background: linear-gradient(to right, red, yellow, green, blue, purple);
             padding: 20px;
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 10px;
             padding: 20px;
         }
         .box {
-            background-color: rgba(255, 0, 0, 0.7);
-            border: 2px solid green;
+            background-color: rgba(0, 255, 0, 0.7);
+            border: 2px solid red;
             padding: 20px;
             text-align: center;
             cursor: pointer;
@@ -37,79 +37,65 @@
         .box:hover {
             transform: scale(1.05);
         }
-        @keyframes bullets {
-            0% { top: -50px; }
+        @keyframes falling {
+            0% { top: -10%; }
             100% { top: 100%; }
         }
-        .bullet {
+        .falling-gun {
             position: absolute;
-            width: 5px;
-            height: 20px;
-            background: gray;
-            animation: bullets 2s linear infinite;
+            width: 50px;
+            animation: falling 5s infinite;
         }
     </style>
 </head>
 <body>
     <div class="banner">Author: Sohail Khan</div>
     <div class="container">
-        <div class="box" onclick="alert('Information about SQL Injection')">SQL Injection</div>
-        <div class="box" onclick="alert('Information about Phishing')">Phishing</div>
-        <div class="box" onclick="alert('Information about DDoS Attack')">DDoS Attack</div>
-        <div class="box" onclick="alert('Information about Man-in-the-Middle')">Man-in-the-Middle</div>
-        <div class="box" onclick="alert('Information about Cross-Site Scripting')">Cross-Site Scripting</div>
-        <div class="box" onclick="alert('Information about Keylogging')">Keylogging</div>
-        <div class="box" onclick="alert('Information about Ransomware')">Ransomware</div>
-        <div class="box" onclick="alert('Information about Malware')">Malware</div>
-        <div class="box" onclick="alert('Information about Social Engineering')">Social Engineering</div>
-        <div class="box" onclick="alert('Information about Network Sniffing')">Network Sniffing</div>
-        <div class="box" onclick="alert('Information about Credential Stuffing')">Credential Stuffing</div>
-        <div class="box" onclick="alert('Information about Zero-Day Exploit')">Zero-Day Exploit</div>
-        <div class="box" onclick="alert('Information about Session Hijacking')">Session Hijacking</div>
-        <div class="box" onclick="alert('Information about DNS Spoofing')">DNS Spoofing</div>
-        <div class="box" onclick="alert('Information about Drive-By Downloads')">Drive-By Downloads</div>
-        <div class="box" onclick="alert('Information about Clickjacking')">Clickjacking</div>
-        <div class="box" onclick="alert('Information about Web Shells')">Web Shells</div>
-        <div class="box" onclick="alert('Information about Botnets')">Botnets</div>
-        <div class="box" onclick="alert('Information about SQL Map')">SQL Map</div>
-        <div class="box" onclick="alert('Information about Wi-Fi Eavesdropping')">Wi-Fi Eavesdropping</div>
-        <div class="box" onclick="alert('Information about Packet Sniffing')">Packet Sniffing</div>
-        <div class="box" onclick="alert('Information about Exploit Kits')">Exploit Kits</div>
-        <div class="box" onclick="alert('Information about Backdoors')">Backdoors</div>
-        <div class="box" onclick="alert('Information about Phreaking')">Phreaking</div>
-        <div class="box" onclick="alert('Information about Eavesdropping')">Eavesdropping</div>
-        <div class="box" onclick="alert('Information about Rogue Software')">Rogue Software</div>
-        <div class="box" onclick="alert('Information about Ad Fraud')">Ad Fraud</div>
-        <div class="box" onclick="alert('Information about ATM Skimming')">ATM Skimming</div>
-        <div class="box" onclick="alert('Information about Credential Harvesting')">Credential Harvesting</div>
-        <div class="box" onclick="alert('Information about Rogue Access Points')">Rogue Access Points</div>
-        <div class="box" onclick="alert('Information about Web Application Attacks')">Web Application Attacks</div>
-        <div class="box" onclick="alert('Information about Insider Threats')">Insider Threats</div>
-        <div class="box" onclick="alert('Information about Supply Chain Attacks')">Supply Chain Attacks</div>
-        <div class="box" onclick="alert('Information about Physical Security')">Physical Security</div>
-        <div class="box" onclick="alert('Information about Cyber Espionage')">Cyber Espionage</div>
-        <div class="box" onclick="alert('Information about Data Breaches')">Data Breaches</div>
-        <div class="box" onclick="alert('Information about Internet of Things Attacks')">IoT Attacks</div>
-        <div class="box" onclick="alert('Information about Cloud Security Issues')">Cloud Security Issues</div>
-        <div class="box" onclick="alert('Information about Mobile Security Threats')">Mobile Security Threats</div>
-        <div class="box" onclick="alert('Information about Cybersecurity Frameworks')">Cybersecurity Frameworks</div>
-        <div class="box" onclick="alert('Information about Threat Intelligence')">Threat Intelligence</div>
-        <div class="box" onclick="alert('Information about Incident Response')">Incident Response</div>
-        <div class="box" onclick="alert('Information about Vulnerability Management')">Vulnerability Management</div>
-        <div class="box" onclick="alert('Information about Security Awareness Training')">Security Awareness Training</div>
-        <div class="box" onclick="alert('Information about Penetration Testing')">Penetration Testing</div>
-        <div class="box" onclick="alert('Information about Risk Assessment')">Risk Assessment</div>
-        <div class="box" onclick="alert('Information about Security Policies')">Security Policies</div>
-        <div class="box" onclick="alert('Information about Compliance')">Compliance</div>
-        <div class="box" onclick="alert('Information about Digital Forensics')">Digital Forensics</div>
-        <div class="box" onclick="alert('Information about Cybersecurity Tools')">Cybersecurity Tools</div>
-        <div class="box" onclick="alert('Information about Security Audits')">Security Audits</div>
-        <div class="box" onclick="alert('Information about Cybersecurity Certifications')">Cybersecurity Certifications</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique1.com'">Technique 1: SQL Injection</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique2.com'">Technique 2: Phishing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique3.com'">Technique 3: Cross-Site Scripting</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique4.com'">Technique 4: Man-in-the-Middle</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique5.com'">Technique 5: Denial of Service</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique6.com'">Technique 6: Password Cracking</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique7.com'">Technique 7: Malware</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique8.com'">Technique 8: Social Engineering</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique9.com'">Technique 9: Ransomware</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique10.com'">Technique 10: Keylogging</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique11.com'">Technique 11: Network Sniffing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique12.com'">Technique 12: Session Hijacking</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique13.com'">Technique 13: Drive-by Downloads</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique14.com'">Technique 14: Credential Stuffing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique15.com'">Technique 15: Zero-Day Exploits</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique16.com'">Technique 16: DNS Spoofing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique17.com'">Technique 17: Clickjacking</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique18.com'">Technique 18: Eavesdropping</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique19.com'">Technique 19: Rogue Software</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique20.com'">Technique 20: Web Scraping</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique21.com'">Technique 21: API Exploitation</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique22.com'">Technique 22: Bluetooth Hacking</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique23.com'">Technique 23: IoT Vulnerabilities</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique24.com'">Technique 24: Physical Security</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique25.com'">Technique 25: Wireless Attacks</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique26.com'">Technique 26: Code Injection</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique27.com'">Technique 27: Buffer Overflow</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique28.com'">Technique 28: Web Shells</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique29.com'">Technique 29: Credential Harvesting</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique30.com'">Technique 30: Supply Chain Attacks</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique31.com'">Technique 31: Domain Spoofing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique32.com'">Technique 32: Web Application Attacks</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique33.com'">Technique 33: Email Spoofing</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique34.com'">Technique 34: Data Breaches</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique35.com'">Technique 35: Insider Threats</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique36.com'">Technique 36: Web Vulnerability Scanning</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique37.com'">Technique 37: Network Attacks</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique38.com'">Technique 38: Data Exfiltration</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique39.com'">Technique 39: Social Media Exploits</div>
+        <div class="box" onclick="window.location='https://www.hackingtechnique40.com'">Technique 40: Cloud Security Risks</div>
     </div>
-    <div class="bullet" style="left: 10%;"></div>
-    <div class="bullet" style="left: 30%;"></div>
-    <div class="bullet" style="left: 50%;"></div>
-    <div class="bullet" style="left: 70%;"></div>
-    <div class="bullet" style="left: 90%;"></div>
+    <img src="gun.png" class="falling-gun" style="left: 10%; animation-delay: 0s;">
+    <img src="gun.png" class="falling-gun" style="left: 30%; animation-delay: 1s;">
+    <img src="gun.png" class="falling-gun" style="left: 50%; animation-delay: 2s;">
+    <img src="gun.png" class="falling-gun" style="left: 70%; animation-delay: 3s;">
+    <img src="gun.png" class="falling-gun" style="left: 90%; animation-delay: 4s;">
 </body>
 </html>
