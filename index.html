@@ -1,47 +1,94 @@
-# TAIBA
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAIBA</title>
+    <title>Hacking Solutions</title>
     <style>
         body {
-            background-color: #f0e5d8;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
-            position: relative;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            overflow-y: scroll;
         }
-        h1 {
+        .banner {
             text-align: center;
-            color: #d45d00;
-            margin-top: 50px;
+            font-size: 2em;
+            font-weight: bold;
+            color: green;
+            text-shadow: 0 0 20px green;
+            margin: 20px 0;
         }
-        p {
-            text-align: center;
-            font-size: 20px;
-            color: #333;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .flower {
+        .box {
+            border: 2px solid red;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+        }
+        .falling-petals {
             position: absolute;
-            animation: fall 5s infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
         @keyframes fall {
-            0% { top: -10%; }
-            100% { top: 100%; }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: pink;
+            border-radius: 50%;
+            animation: fall 5s infinite;
         }
     </style>
 </head>
 <body>
-    <h1>To My Beloved TAIBA</h1>
-    <p>Beautiful as the moon,</p>
-    <p>Radiant like the stars,</p>
-    <p>Her smile lights up the darkest nights.</p>
-    
-    <script>
-        const flowers = ['🌸', '🌼', '🌺', '🌻'];
-        const createFlower = () => {
-            const flower = document.createElement('div');
-            flower.className = 'flower';
-            flower.innerText = flowers[Math.floor(Math
+    <div class="banner">SOHAIL KHAN</div>
+    <div class="container">
+        <div class="box">
+            <h3>Termux Installation Issues</h3>
+            <p>Solution: Ensure you have the latest version of Termux installed. Use the command <code>pkg update && pkg upgrade</code>.</p>
+        </div>
+        <div class="box">
+            <h3>Package Installation Failures</h3>
+            <p>Solution: Check your internet connection and use <code>pkg install <package_name></code> to install packages.</p>
+        </div>
+        <div class="box">
+            <h3>Script Execution Errors</h3>
+            <p>Solution: Make sure your script has executable permissions using <code>chmod +x <script_name></code>.</p>
+        </div>
+        <div class="box">
+            <h3>Network Configuration Problems</h3>
+            <p>Solution: Use <code>ifconfig</code> to check your network settings and <code>termux-setup-storage</code> to configure storage access.</p>
+        </div>
+        <div class="box">
+            <h3>Root Access Issues</h3>
+            <p>Solution: Ensure your device is rooted and you have the necessary permissions to run root commands.</p>
+        </div>
+    </div>
+    <div class="falling-petals">
+        <div class="petal" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="petal" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="petal" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="petal" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="petal" style="left: 50%; animation-delay: 4s;"></div>
+    </div>
+</body>
+</html>
