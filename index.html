@@ -6,76 +6,275 @@
     <title>Hacking Solutions</title>
     <style>
         body {
-            background-color: white;
+            background-color: black;
             color: black;
             font-family: Arial, sans-serif;
             overflow-y: scroll;
         }
         .banner {
             background-color: red;
-            color: black;
+            color: white;
             text-align: center;
             padding: 20px;
             font-size: 2em;
             font-weight: bold;
-            box-shadow: 0 0 20px white;
+            box-shadow: 0 0 20px black;
             position: relative;
         }
-        .box {
-            border: 2px solid black;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px;
-            box-shadow: 0 0 10px green;
-            transition: box-shadow 0.3s;
+        .glow {
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
         }
-        .box:hover {
-            box-shadow: 0 0 20px blue;
+        .problem-solution {
+            border: 2px solid green;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 15px;
+            box-shadow: 0 0 10px blue;
+            position: relative;
         }
         .falling-petals {
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            overflow: hidden;
-        }
-        .petal {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: pink;
-            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
             animation: fall 5s infinite;
         }
         @keyframes fall {
-            0% { top: -10px; }
+            0% { top: -10%; }
             100% { top: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="banner">
-        SOHAIL KHAN
-        <div class="falling-petals">
-            <div class="petal" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="petal" style="left: 30%; animation-delay: 1s;"></div>
-            <div class="petal" style="left: 50%; animation-delay: 2s;"></div>
-            <div class="petal" style="left: 70%; animation-delay: 3s;"></div>
-            <div class="petal" style="left: 90%; animation-delay: 4s;"></div>
-        </div>
-    </div>
+    <div class="banner glow">𝐒𝐎𝐇𝐀𝐈𝐋 𝐊𝐇𝐀𝐍</div>
+    <div class="falling-petals">🌸🌸🌸🌸🌸</div>
 
-    <div class="box">
-        <h3>Problem 1: Termux Installation Issues</h3>
+    <div class="problem-solution">
+        <h3>Problem 1: 𝐓𝐄𝐑𝐌𝐔𝐗 𝐈𝐍𝐒𝐓𝐀𝐋𝐀𝐓𝐈𝐎𝐍 𝐄𝐑𝐑𝐎𝐑𝐒</h3>
         <p>Solution: Ensure you have the latest version of Termux installed. Use the command <code>pkg update && pkg upgrade</code> to update packages.</p>
     </div>
-    <div class="box">
-        <h3>Problem 2: Package Not Found</h3>
-        <p>Solution: Check your sources.list file and ensure it contains the correct repositories. Use <code>termux-change-repo</code> to manage repositories.</p>
+
+    <div class="problem-solution">
+        <h3>Problem 2: 𝐔𝐍𝐀𝐁𝐋𝐄 𝐓𝐎 𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
+        <p>Solution: Check your internet connection and use <code>pkg install <package_name></code> to install the required package.</p>
     </div>
-    <!-- Repeat similar boxes for 100+ problems and solutions -->
+
+    <div class="problem-solution">
+        <h3>Problem 3: 𝐏𝐄𝐑𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐍𝐈𝐄𝐃 𝐄𝐑𝐑𝐎𝐑𝐒</h3>
+        <p>Solution: Use <code>termux-setup-storage</code> to grant storage permissions.</p>
+    </div>
+
+    <div class="problem-solution">
+        <h3>Problem 4: 𝐒𝐋𝐎𝐖 𝐏𝐄𝐑𝐅𝐎𝐑𝐌𝐀𝐍𝐂𝐄</h3>
+        <p>Solution: Clear cache using <code>pkg clean</code> and ensure you have enough storage space.</p>
+    </div>
+
+    <div class="problem-solution">
+        <h3>Problem 5: 𝐍𝐄𝐓𝐖𝐎𝐑𝐊 𝐈𝐒𝐒𝐔𝐄</h3>
+        <p>Solution: Check your VPN settings and ensure that Termux has network access.</p>
+    </div>
     
+    <div class="problem-solution">
+    <h3>Problem 1: 𝐔𝐏𝐃𝐀𝐓𝐄 𝐓𝐄𝐑𝐌𝐔𝐗 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
+    <p>Solution: apt update && apt upgrade -y</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 2: 𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄 (e.g., nano)</h3>
+    <p>Solution: pkg install nano -y</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 3: 𝐋𝐈𝐒𝐓 𝐈𝐍𝐒𝐓𝐀𝐋𝐋𝐄𝐃 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
+    <p>Solution: pkg list-installed</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 4: 𝐂𝐇𝐄𝐂𝐊 𝐒𝐓𝐎𝐑𝐀𝐆𝐄 𝐏𝐄𝐑𝐌.</h3>
+    <p>Solution: termux-setup-storage</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 5: 𝐂𝐋𝐄𝐀𝐑 𝐓𝐄𝐑𝐌𝐔𝐗 𝐒𝐂𝐑𝐄𝐄𝐍</h3>
+    <p>Solution: clear</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 6: 𝐄𝐗𝐈𝐓 𝐒𝐄𝐄𝐒𝐈𝐎𝐍</h3>
+    <p>Solution: exit</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 7: 𝐂𝐑𝐄𝐀𝐓𝐄𝐀 𝐍𝐄𝐖 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: touch myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 8: 𝐂𝐑𝐄𝐀𝐓𝐄 𝐍𝐄𝐖 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
+    <p>Solution: mkdir mydir</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 9: 𝐋𝐈𝐒𝐓 𝐎𝐅 𝐅𝐈𝐋𝐄𝐒 𝐈𝐍 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
+    <p>Solution: ls -la</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 10: 𝐌𝐎𝐕𝐄 𝐀 𝐅𝐈𝐋𝐄 𝐓𝐎 𝐎𝐓𝐇𝐄𝐑 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
+    <p>Solution: mv myfile.txt mydir/</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 11: 𝐂𝐎𝐏𝐘 𝐀 𝐅𝐈𝐋𝐄 𝐓𝐎 𝐎𝐓𝐇𝐄𝐑 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
+    <p>Solution: cp myfile.txt mydir/</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 12: 𝐃𝐄𝐋𝐄𝐓𝐄 𝐀 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: rm myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 13: 𝐃𝐄𝐋𝐄𝐓𝐄 𝐀 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘 𝐀𝐍𝐃 𝐈𝐓𝐒 𝐂𝐎𝐍𝐓𝐄𝐍𝐓</h3>
+    <p>Solution: rm -rf mydir</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 14: 𝐅𝐈𝐍𝐃 𝐀𝐍𝐘 𝐅𝐈𝐋𝐄 𝐁𝐘 𝐍𝐀𝐄</h3>
+    <p>Solution: find . -name "myfile.txt"</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 15: 𝐃𝐈𝐒𝐏𝐋𝐘 𝐅𝐈𝐋𝐄 𝐂𝐎𝐍𝐓𝐄𝐍𝐓𝐒</h3>
+    <p>Solution: cat myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 16: 𝐒𝐄𝐀𝐑𝐂𝐇 𝐅𝐎𝐑 𝐀 𝐖𝐎𝐑𝐃 𝐈𝐍𝐀 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: grep "word" myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 17: 𝐂𝐎𝐔𝐍𝐓 𝐖𝐎𝐑𝐃𝐒.𝐋𝐈𝐍𝐄𝐒.𝐀𝐍𝐃 𝐂𝐇𝐀𝐑𝐀𝐂𝐓𝐄𝐑𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: wc myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 18: 𝐌𝐀𝐊𝐄 𝐀 𝐅𝐈𝐋𝐄 𝐄𝐗𝐂𝐔𝐓𝐀𝐁𝐋𝐄</h3>
+    <p>Solution: chmod +x script.sh</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 19: 𝐂𝐇𝐄𝐂𝐊 𝐈𝐍𝐓𝐄𝐑𝐍𝐄𝐓 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐈𝐕𝐈𝐓𝐘</h3>
+    <p>Solution: ping -c 4 google.com</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 20: 𝐅𝐈𝐍𝐃 𝐘𝐎𝐔𝐑 𝐏𝐔𝐁𝐋𝐈𝐂 𝐈𝐏 𝐀𝐃𝐑𝐑𝐄𝐒𝐒</h3>
+    <p>Solution: curl ifconfig.me</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 21: 𝐃𝐎𝐖𝐍𝐋𝐈𝐀𝐃 𝐀 𝐅𝐈𝐋𝐄 𝐖𝐈𝐓𝐇 𝐔𝐑𝐋</h3>
+    <p>Solution: wget https://example.com/file.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 22: 𝐂𝐇𝐄𝐂𝐊 𝐎𝐏𝐄𝐍 𝐏𝐎𝐑𝐓𝐒𝐎𝐍 𝐘𝐎𝐔𝐑 𝐃𝐄𝐕𝐈𝐂𝐄</h3>
+    <p>Solution: netstat -tulnp</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 23: 𝐒𝐓𝐀𝐑𝐓 𝐚𝐧 𝐇𝐓𝐓𝐏 𝐒𝐄𝐑𝐕𝐄𝐑 𝐎𝐍 𝐏𝐎𝐑𝐓 𝟖𝟎𝟖𝟎</h3>
+    <p>Solution: python -m http.server 8080</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 24: 𝐒𝐂𝐀𝐍 𝐀 𝐇𝐎𝐒𝐓 𝐅𝐎𝐑 𝐎𝐏𝐄𝐁 𝐏𝐎𝐑𝐓𝐒 (install Nmap first)</h3>
+    <p>Solution: nmap -p- 192.168.1.1</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 25: 𝐂𝐇𝐄𝐂𝐊 𝐂𝐔𝐑𝐑𝐄𝐍𝐓𝐔𝐒𝐑</h3>
+    <p>Solution: whoami</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 26: 𝐒𝐇𝐎𝐖 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍𝐒</h3>
+    <p>Solution: uname -a</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 27: 𝐂𝐇𝐄𝐂𝐊 𝐃𝐈𝐒𝐊 𝐒𝐏𝐀𝐂𝐄 𝐔𝐒𝐀𝐆𝐄</h3>
+    <p>Solution: df -h</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 28: 𝐂𝐇𝐄𝐂𝐊 𝐑𝐀𝐌 𝐔𝐒𝐀𝐆𝐄</h3>
+    <p>Solution: free -h</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 29: 𝐑𝐄𝐏𝐋𝐀𝐂𝐄𝐀 𝐖𝐎𝐑𝐃 𝐈𝐍𝐀𝐍𝐘 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: sed -i 's/oldword/newword/g' myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 30: 𝐒𝐎𝐑𝐓 𝐋𝐈𝐍𝐄𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: sort myfile.txt -o myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 31: 𝐑𝐄𝐌𝐎𝐕𝐄 𝐃𝐔𝐏𝐋𝐈𝐂𝐀𝐓𝐄 𝐋𝐈𝐍𝐄𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
+    <p>Solution: sort -u myfile.txt -o myfile.txt</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 32: 𝐂𝐎𝐍𝐕𝐄𝐑𝐓 𝐅𝐈𝐋𝐄 𝐂𝐎𝐍𝐓𝐄𝐍𝐓 𝐓𝐎 𝐔𝐏𝐄𝐑𝐂𝐀𝐒𝐄</h3>
+    <p>Solution: cat myfile.txt | tr '[:lower:]' '[:upper:]'</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 33: 𝐋𝐈𝐒𝐓 𝐑𝐔𝐍𝐍𝐈𝐍𝐆 𝐏𝐑𝐎𝐂𝐄𝐒𝐒</h3>
+    <p>Solution: ps aux</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 34: 𝐊𝐈𝐋𝐋 𝐏𝐑𝐎𝐂𝐄𝐒𝐒 𝐁𝐘 𝐏𝐈𝐃</h3>
+    <p>Solution: kill &lt;PID&gt;</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 35: 𝐊𝐈𝐋𝐋 𝐏𝐑𝐎𝐂𝐄𝐒𝐒 𝐁𝐘 𝐍𝐀𝐌𝐄</h3>
+    <p>Solution: pkill processname</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 36: 𝐂𝐇𝐄𝐂𝐊 𝐒𝐘𝐒𝐓𝐄𝐌 𝐔𝐏𝐓𝐈𝐌𝐄</h3>
+    <p>Solution: uptime</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 37: 𝐒𝐄𝐀𝐑𝐂𝐇 𝐅𝐎𝐑 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
+    <p>Solution: pkg search package-name</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 38: 𝐔𝐍𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
+    <p>Solution: pkg uninstall package-name</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 39: 𝐋𝐈𝐒𝐓 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 𝐅𝐎𝐑 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒 </h3>
+    <p>Solution: apt list --upgradable</p>
+</div>
+
+<div class="problem-solution">
+    <h3>Problem 40: 𝐔𝐏𝐆𝐑𝐀𝐃𝐄 𝐀𝐋𝐋 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
+    <p>Solution: apt upgrade -y</p>
+</div>
+
+
 </body>
 </html>
