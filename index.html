@@ -1,65 +1,47 @@
-# Snake Game
+# TAIBA
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
+    <title>TAIBA</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #f0e5d8;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
         }
-        canvas {
-            border: 1px solid #000;
-            background-color: #fff;
+        h1 {
+            text-align: center;
+            color: #d45d00;
+            margin-top: 50px;
+        }
+        p {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+        .flower {
+            position: absolute;
+            animation: fall 5s infinite;
+        }
+        @keyframes fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
         }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <h1>To My Beloved TAIBA</h1>
+    <p>Beautiful as the moon,</p>
+    <p>Radiant like the stars,</p>
+    <p>Her smile lights up the darkest nights.</p>
+    
     <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let snake = [{ x: 10, y: 10 }];
-        let direction = { x: 0, y: 0 };
-        let food = { x: 15, y: 15 };
-        let score = 0;
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawSnake();
-            drawFood();
-            moveSnake();
-            checkCollision();
-        }
-
-        function drawSnake() {
-            ctx.fillStyle = 'green';
-            snake.forEach(segment => {
-                ctx.fillRect(segment.x * 20, segment.y * 20, 18, 18);
-            });
-        }
-
-        function drawFood() {
-            ctx.fillStyle = 'red';
-            ctx.fillRect(food.x * 20, food.y * 20, 18, 18);
-        }
-
-        function moveSnake() {
-            const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
-            snake.unshift(head);
-            if (head.x === food.x && head.y === food.y) {
-                score++;
-                placeFood();
-            } else {
-                snake.pop();
-            }
-        }
-
-        function place
+        const flowers = ['🌸', '🌼', '🌺', '🌻'];
+        const createFlower = () => {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.innerText = flowers[Math.floor(Math
