@@ -3,289 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TALHA KHAN - Cyber Security Specialist</title>
+    <title>TALHA KHAN | Cyber Security Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Exo+2:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --deep-navy: #0a192f;
+            --cool-teal: #64ffda;
+            --light-slate: #ccd6f6;
+            --dark-slate: #495670;
+            --navy-shadow: rgba(2,12,27,0.7);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Share Tech Mono', monospace;
         }
 
         body {
-            background-color: #ffff00; /* Yellow background */
-            color: #000000; /* Black text */
+            background-color: var(--deep-navy);
+            color: var(--light-slate);
+            font-family: 'Exo 2', sans-serif;
             line-height: 1.6;
-            padding: 20px;
             overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
+            padding: 2rem;
         }
 
-        /* Flower Petals */
-        .petals {
+        /* Animated Gradient Background */
+        .bg-wrapper {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 0;
+            z-index: -1;
+            background: linear-gradient(-45deg, #0a192f, #0d1b36, #112240, #0d1b36);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
 
-        .petal {
-            position: absolute;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23007BFF"><path d="M12 2C13.1 2 14 2.9 14 4s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm8 7h-5v12c0 .55-.45 1-1 1s-1-.45-1-1v-5h-2v5c0 .55-.45 1-1 1s-1-.45-1-1V9H4c-.55 0-1-.45-1-1s.45-1 1-1h16c.55 0 1 .45 1 1s-.45 1-1 1z"/></svg>');
-            background-size: contain;
-            width: 20px;
-            height: 20px;
-            opacity: 0.6;
-            animation: falling linear infinite;
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes falling {
-            0% {
-                transform: translate(0, -10vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translate(calc(var(--random-x) * 100vw), 100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Video Background */
-        .video-container {
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 0;
-            margin-bottom: 20px;
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
             position: relative;
-            border: 3px solid #007BFF; /* Blue border */
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
-            z-index: 1;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Profile Section */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
         }
 
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 3px solid #007BFF; /* Blue border */
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
-            margin-top: -75px;
-            z-index: 10;
-            background-color: #ffff00; /* Yellow background */
+            border: 3px solid var(--cool-teal);
+            margin: 0 auto;
             overflow: hidden;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
         }
 
         .profile-pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: contrast(120%);
         }
 
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #000000; /* Black text */
-            margin: 20px 0 5px;
-            text-align: center;
-            text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 1.5rem 0 0.5rem;
+            color: white;
+            font-family: 'Space Mono', monospace;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #000000; /* Black text */
-            margin-bottom: 30px;
-            text-align: center;
+            color: var(--cool-teal);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Content Cards */
+        /* Cards */
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            border: 2px solid #007BFF; /* Blue border */
-            border-radius: 0;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Blue shadow */
-            position: relative;
-            z-index: 1;
+            background: rgba(10, 25, 47, 0.7);
+            border-left: 2px solid var(--cool-teal);
+            border-radius: 3px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -15px var(--navy-shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-left: 2px solid white;
         }
 
         .card h2 {
-            color: #007BFF; /* Blue text */
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            border-bottom: 1px solid #007BFF; /* Blue border */
-            padding-bottom: 10px;
+            font-family: 'Space Mono', monospace;
+            color: var(--cool-teal);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
         }
 
-        .card p, .card ul {
-            margin-bottom: 15px;
-            color: #000000; /* Black text */
+        .card h2::after {
+            content: '';
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: var(--dark-slate);
+            margin-top: 0.5rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         .card ul {
-            padding-left: 20px;
-            list-style-type: none;
+            list-style: none;
         }
 
         .card li {
-            margin-bottom: 8px;
             position: relative;
-            padding-left: 20px;
-            color: #000000; /* Black text */
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .card li:before {
-            content: ">";
-            color: #007BFF; /* Blue marker */
+        .card li::before {
+            content: '▹';
             position: absolute;
             left: 0;
+            color: var(--cool-teal);
         }
 
-        /* Contact Button */
+        /* Button */
         .contact-btn {
             display: inline-block;
-            background-color: transparent;
-            color: #007BFF; /* Blue text */
-            border: 2px solid #007BFF; /* Blue border */
-            padding: 10px 25px;
-            border-radius: 0;
+            background: transparent;
+            color: var(--cool-teal);
+            border: 1px solid var(--cool-teal);
+            padding: 0.8rem 1.8rem;
+            border-radius: 3px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
+            margin-top: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Blue shadow */
-            text-transform: uppercase;
+            cursor: pointer;
         }
 
         .contact-btn:hover {
-            background-color: #007BFF; /* Blue background */
-            color: #ffffff; /* White text */
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* Blue shadow */
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, var(--dark-slate), transparent);
+            margin: 2rem 0;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .title {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
-            .video-container {
-                height: 250px;
+            .subtitle {
+                font-size: 1rem;
             }
             
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-                margin-top: -60px;
+            .card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Flower Petals -->
-    <div class="petals" id="petals-container"></div>
+    <!-- Animated Background -->
+    <div class="bg-wrapper"></div>
 
     <div class="container">
-        <!-- Video Background -->
-        <div class="video-container">
-            <iframe src="https://streamable.com/e/t5w0o6?autoplay=1&muted=1&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>
-        </div>
-        
-        <!-- Profile Section -->
-        <div class="profile-section">
+        <!-- Header Section -->
+        <header class="header">
             <div class="profile-pic">
-                <img src="https://i.imgur.com/WxubHxQ.jpeg" alt="TALHA KHAN">
+                <img src="https://i.imgur.com/WxubHxQ.jpeg" alt="Talha Khan">
             </div>
-            <h1 class="title">TALHA KHAN🌐</h1>
-            <p class="subtitle">CYBER SECURITY 💀• ETHICAL HACKING 💀• PENETRATION TESTING💀</p>
-        </div>
-        
-        <!-- Introduction Card -->
+            <h1>Talha Khan</h1>
+            <p class="subtitle">Senior Security Consultant & Penetration Tester</p>
+            <div class="decorative-line"></div>
+        </header>
+
+        <!-- About Section -->
         <div class="card">
-            <h2>// SECURITY WARNING</h2>
-            <p>YOUR SYSTEMS ARE VULNERABLE. I FIND WHAT OTHERS MISS.</p>
-            <p>Specializing in offensive security to strengthen defenses through controlled attacks.</p>
+            <h2>About Me</h2>
+            <p>I identify vulnerabilities before threat actors do. With a decade of experience in offensive security, I help organizations strengthen their defenses through rigorous testing and strategic advisement.</p>
+            <p>My approach combines technical expertise with business acumen to deliver actionable security insights.</p>
         </div>
-        
-        <!-- Skills Card -->
+
+        <!-- Expertise Section -->
         <div class="card">
-            <h2>// CORE SKILLS</h2>
+            <h2>Core Expertise</h2>
             <ul>
-                <li>Penetration Testing</li>
-                <li>Vulnerability Research</li>
-                <li>Network Security</li>
-                <li>Cryptography</li>
-                <li>Malware Analysis</li>
+                <li>Advanced Penetration Testing</li>
+                <li>Cloud Security Architecture</li>
+                <li>Red Team Operations</li>
+                <li>Threat Intelligence</li>
+                <li>Secure Code Review</li>
+                <li>Incident Response</li>
             </ul>
         </div>
-        
-        <!-- Contact Card -->
+
+        <!-- Methodology Section -->
         <div class="card">
-            <h2>// SECURE CONNECTION</h2>
-            <p>Email: contact@talhakhan.com</p>
-            <p>Signal: +1 555 123 4567</p>
-            <a href="mailto:contact@talhakhan.com" class="contact-btn">ENCRYPTED MESSAGE</a>
+            <h2>Security Methodology</h2>
+            <p>I employ a comprehensive framework that combines:</p>
+            <ul>
+                <li>OWASP Testing Guide principles</li>
+                <li>MITRE ATT&CK framework</li>
+                <li>NIST Cybersecurity Framework</li>
+                <li>Custom threat modeling</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card">
+            <h2>Get In Touch</h2>
+            <p>For consulting inquiries or security assessments:</p>
+            <a href="mailto:contact@talhakhan.com" class="contact-btn">Contact Me</a>
         </div>
     </div>
 
     <script>
-        // Create flower petals
-        function createPetals() {
-            const container = document.getElementById('petals-container');
-            const petalCount = 15;
+        // Simple animation for cards on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
             
-            for (let i = 0; i < petalCount; i++) {
-                const petal = document.createElement('div');
-                petal.classList.add('petal');
-                
-                // Random positioning and animation
-                petal.style.setProperty('--random-x', Math.random());
-                petal.style.left = `${Math.random() * 100}%`;
-                petal.style.animationDuration = `${5 + Math.random() * 10}s`;
-                petal.style.animationDelay = `${Math.random() * 5}s`;
-                petal.style.width = `${10 + Math.random() * 15}px`;
-                petal.style.height = petal.style.width;
-                
-                container.appendChild(petal);
-            }
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', function() {
-            createPetals();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
         });
     </script>
 </body>
