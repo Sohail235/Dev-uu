@@ -3,278 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking Solutions</title>
+    <title>TALHA KHAN - Cyber Security Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            overflow-y: scroll;
-        }
-        .banner {
-            background-color: black;
-            color: white;
-            text-align: center;
+            background-color: #000;
+            color: #0f0;
+            line-height: 1.6;
             padding: 20px;
-            font-size: 2em;
-            font-weight: bold;
-            box-shadow: 0 0 20px black;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
             position: relative;
+            z-index: 1;
         }
-        .glow {
-            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px black;
-        }
-        .problem-solution {
-            border: 2px solid green;
-            border-radius: 10px;
-            margin: 20px;
-            padding: 15px;
-            box-shadow: 0 0 10px blue;
-            position: relative;
-        }
-        .falling-petals {
-            position: absolute;
+
+        /* Flower Petals */
+        .petals {
+            position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fall 5s infinite;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
         }
-        @keyframes fall {
-            0% { top: -10%; }
-            100% { top: 100%; }
+
+        .petal {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff4500"><path d="M12 2C13.1 2 14 2.9 14 4s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm8 7h-5v12c0 .55-.45 1-1 1s-1-.45-1-1v-5h-2v5c0 .55-.45 1-1 1s-1-.45-1-1V9H4c-.55 0-1-.45-1-1s.45-1 1-1h16c.55 0 1 .45 1 1s-.45 1-1 1z"/></svg>');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+            animation: falling linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translate(0, -10vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(calc(var(--random-x) * 100vw), 100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Video Background */
+        .video-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 0;
+            margin-bottom: 20px;
+            position: relative;
+            border: 1px solid #ff4500;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+            z-index: 1;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #ff4500;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+            margin-top: -75px;
+            z-index: 10;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(150%);
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff4500;
+            margin: 20px 0 5px;
+            text-align: center;
+            text-shadow: 0 0 10px #ff4500;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #0f0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Content Cards */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #ff4500;
+            border-radius: 0;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card h2 {
+            color: #ff4500;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #ff4500;
+            padding-bottom: 10px;
+        }
+
+        .card p, .card ul {
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .card li:before {
+            content: ">";
+            color: #ff4500;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Button */
+        .contact-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #ff4500;
+            border: 2px solid #ff4500;
+            padding: 10px 25px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+            text-transform: uppercase;
+        }
+
+        .contact-btn:hover {
+            background-color: #ff4500;
+            color: black;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .video-container {
+                height: 250px;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+                margin-top: -60px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Flower Petals -->
+    <div class="petals" id="petals-container"></div>
 
-    <div class="banner glow">𝐒𝐎𝐇𝐀𝐈𝐋 𝐊𝐇𝐀𝐍</div>
-    <div class="falling-petals">☠️𝐓𝐀𝐋𝐇𝐀 𝐊𝐇𝐀𝐍☠️</div>
-
-    <div class="problem-solution">
-        <h3>Problem 1: 𝐓𝐄𝐑𝐌𝐔𝐗 𝐈𝐍𝐒𝐓𝐀𝐋𝐀𝐓𝐈𝐎𝐍 𝐄𝐑𝐑𝐎𝐑𝐒</h3>
-        <p>Solution: Ensure you have the latest version of Termux installed. Use the command <code>pkg update && pkg upgrade</code> to update packages.</p>
+    <div class="container">
+        <!-- Video Background -->
+        <div class="video-container">
+            <iframe src="https://streamable.com/e/t5w0o6?autoplay=1&muted=1&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-pic">
+                <img src="https://i.imgur.com/WxubHxQ.jpeg" alt="TALHA KHAN">
+            </div>
+            <h1 class="title">TALHA KHAN</h1>
+            <p class="subtitle">CYBER SECURITY • ETHICAL HACKING • PENETRATION TESTING</p>
+        </div>
+        
+        <!-- Introduction Card -->
+        <div class="card">
+            <h2>// WARNING</h2>
+            <p>YOUR SYSTEMS ARE VULNERABLE. I FIND WHAT OTHERS MISS.</p>
+            <p>Specializing in offensive security to strengthen defenses through controlled attacks.</p>
+        </div>
+        
+        <!-- Skills Card -->
+        <div class="card">
+            <h2>// SKILLSET</h2>
+            <ul>
+                <li>Penetration Testing</li>
+                <li>Vulnerability Research</li>
+                <li>Network Security</li>
+                <li>Cryptography</li>
+                <li>Malware Analysis</li>
+            </ul>
+        </div>
+        
+        <!-- Contact Card -->
+        <div class="card">
+            <h2>// SECURE CONTACT</h2>
+            <p>Email: contact@talhakhan.com</p>
+            <p>Signal: +1 555 123 4567</p>
+            <a href="mailto:contact@talhakhan.com" class="contact-btn">ENCRYPTED MESSAGE</a>
+        </div>
     </div>
 
-    <div class="problem-solution">
-        <h3>Problem 2: 𝐔𝐍𝐀𝐁𝐋𝐄 𝐓𝐎 𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
-        <p>Solution: Check your internet connection and use <code>pkg install <package_name></code> to install the required package.</p>
-    </div>
+    <script>
+        // Create flower petals
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 15;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // Random positioning and animation
+                petal.style.setProperty('--random-x', Math.random());
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.animationDuration = `${5 + Math.random() * 10}s`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                petal.style.width = `${10 + Math.random() * 15}px`;
+                petal.style.height = petal.style.width;
+                
+                container.appendChild(petal);
+            }
+        }
 
-    <div class="problem-solution">
-        <h3>Problem 3: 𝐏𝐄𝐑𝐌𝐈𝐒𝐒𝐈𝐎𝐍 𝐃𝐄𝐍𝐈𝐄𝐃 𝐄𝐑𝐑𝐎𝐑𝐒</h3>
-        <p>Solution: Use <code>termux-setup-storage</code> to grant storage permissions.</p>
-    </div>
-
-    <div class="problem-solution">
-        <h3>Problem 4: 𝐒𝐋𝐎𝐖 𝐏𝐄𝐑𝐅𝐎𝐑𝐌𝐀𝐍𝐂𝐄</h3>
-        <p>Solution: Clear cache using <code>pkg clean</code> and ensure you have enough storage space.</p>
-    </div>
-
-    <div class="problem-solution">
-        <h3>Problem 5: 𝐍𝐄𝐓𝐖𝐎𝐑𝐊 𝐈𝐒𝐒𝐔𝐄</h3>
-        <p>Solution: Check your VPN settings and ensure that Termux has network access.</p>
-    </div>
-    
-    <div class="problem-solution">
-    <h3>Problem 1: 𝐔𝐏𝐃𝐀𝐓𝐄 𝐓𝐄𝐑𝐌𝐔𝐗 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
-    <p>Solution: apt update && apt upgrade -y</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 2: 𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄 (e.g., nano)</h3>
-    <p>Solution: pkg install nano -y</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 3: 𝐋𝐈𝐒𝐓 𝐈𝐍𝐒𝐓𝐀𝐋𝐋𝐄𝐃 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
-    <p>Solution: pkg list-installed</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 4: 𝐂𝐇𝐄𝐂𝐊 𝐒𝐓𝐎𝐑𝐀𝐆𝐄 𝐏𝐄𝐑𝐌.</h3>
-    <p>Solution: termux-setup-storage</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 5: 𝐂𝐋𝐄𝐀𝐑 𝐓𝐄𝐑𝐌𝐔𝐗 𝐒𝐂𝐑𝐄𝐄𝐍</h3>
-    <p>Solution: clear</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 6: 𝐄𝐗𝐈𝐓 𝐒𝐄𝐄𝐒𝐈𝐎𝐍</h3>
-    <p>Solution: exit</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 7: 𝐂𝐑𝐄𝐀𝐓𝐄𝐀 𝐍𝐄𝐖 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: touch myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 8: 𝐂𝐑𝐄𝐀𝐓𝐄 𝐍𝐄𝐖 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
-    <p>Solution: mkdir mydir</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 9: 𝐋𝐈𝐒𝐓 𝐎𝐅 𝐅𝐈𝐋𝐄𝐒 𝐈𝐍 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
-    <p>Solution: ls -la</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 10: 𝐌𝐎𝐕𝐄 𝐀 𝐅𝐈𝐋𝐄 𝐓𝐎 𝐎𝐓𝐇𝐄𝐑 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
-    <p>Solution: mv myfile.txt mydir/</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 11: 𝐂𝐎𝐏𝐘 𝐀 𝐅𝐈𝐋𝐄 𝐓𝐎 𝐎𝐓𝐇𝐄𝐑 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘</h3>
-    <p>Solution: cp myfile.txt mydir/</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 12: 𝐃𝐄𝐋𝐄𝐓𝐄 𝐀 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: rm myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 13: 𝐃𝐄𝐋𝐄𝐓𝐄 𝐀 𝐃𝐈𝐑𝐄𝐂𝐓𝐎𝐑𝐘 𝐀𝐍𝐃 𝐈𝐓𝐒 𝐂𝐎𝐍𝐓𝐄𝐍𝐓</h3>
-    <p>Solution: rm -rf mydir</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 14: 𝐅𝐈𝐍𝐃 𝐀𝐍𝐘 𝐅𝐈𝐋𝐄 𝐁𝐘 𝐍𝐀𝐄</h3>
-    <p>Solution: find . -name "myfile.txt"</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 15: 𝐃𝐈𝐒𝐏𝐋𝐘 𝐅𝐈𝐋𝐄 𝐂𝐎𝐍𝐓𝐄𝐍𝐓𝐒</h3>
-    <p>Solution: cat myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 16: 𝐒𝐄𝐀𝐑𝐂𝐇 𝐅𝐎𝐑 𝐀 𝐖𝐎𝐑𝐃 𝐈𝐍𝐀 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: grep "word" myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 17: 𝐂𝐎𝐔𝐍𝐓 𝐖𝐎𝐑𝐃𝐒.𝐋𝐈𝐍𝐄𝐒.𝐀𝐍𝐃 𝐂𝐇𝐀𝐑𝐀𝐂𝐓𝐄𝐑𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: wc myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 18: 𝐌𝐀𝐊𝐄 𝐀 𝐅𝐈𝐋𝐄 𝐄𝐗𝐂𝐔𝐓𝐀𝐁𝐋𝐄</h3>
-    <p>Solution: chmod +x script.sh</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 19: 𝐂𝐇𝐄𝐂𝐊 𝐈𝐍𝐓𝐄𝐑𝐍𝐄𝐓 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐈𝐕𝐈𝐓𝐘</h3>
-    <p>Solution: ping -c 4 google.com</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 20: 𝐅𝐈𝐍𝐃 𝐘𝐎𝐔𝐑 𝐏𝐔𝐁𝐋𝐈𝐂 𝐈𝐏 𝐀𝐃𝐑𝐑𝐄𝐒𝐒</h3>
-    <p>Solution: curl ifconfig.me</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 21: 𝐃𝐎𝐖𝐍𝐋𝐈𝐀𝐃 𝐀 𝐅𝐈𝐋𝐄 𝐖𝐈𝐓𝐇 𝐔𝐑𝐋</h3>
-    <p>Solution: wget https://example.com/file.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 22: 𝐂𝐇𝐄𝐂𝐊 𝐎𝐏𝐄𝐍 𝐏𝐎𝐑𝐓𝐒𝐎𝐍 𝐘𝐎𝐔𝐑 𝐃𝐄𝐕𝐈𝐂𝐄</h3>
-    <p>Solution: netstat -tulnp</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 23: 𝐒𝐓𝐀𝐑𝐓 𝐚𝐧 𝐇𝐓𝐓𝐏 𝐒𝐄𝐑𝐕𝐄𝐑 𝐎𝐍 𝐏𝐎𝐑𝐓 𝟖𝟎𝟖𝟎</h3>
-    <p>Solution: python -m http.server 8080</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 24: 𝐒𝐂𝐀𝐍 𝐀 𝐇𝐎𝐒𝐓 𝐅𝐎𝐑 𝐎𝐏𝐄𝐁 𝐏𝐎𝐑𝐓𝐒 (install Nmap first)</h3>
-    <p>Solution: nmap -p- 192.168.1.1</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 25: 𝐂𝐇𝐄𝐂𝐊 𝐂𝐔𝐑𝐑𝐄𝐍𝐓𝐔𝐒𝐑</h3>
-    <p>Solution: whoami</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 26: 𝐒𝐇𝐎𝐖 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍𝐒</h3>
-    <p>Solution: uname -a</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 27: 𝐂𝐇𝐄𝐂𝐊 𝐃𝐈𝐒𝐊 𝐒𝐏𝐀𝐂𝐄 𝐔𝐒𝐀𝐆𝐄</h3>
-    <p>Solution: df -h</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 28: 𝐂𝐇𝐄𝐂𝐊 𝐑𝐀𝐌 𝐔𝐒𝐀𝐆𝐄</h3>
-    <p>Solution: free -h</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 29: 𝐑𝐄𝐏𝐋𝐀𝐂𝐄𝐀 𝐖𝐎𝐑𝐃 𝐈𝐍𝐀𝐍𝐘 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: sed -i 's/oldword/newword/g' myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 30: 𝐒𝐎𝐑𝐓 𝐋𝐈𝐍𝐄𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: sort myfile.txt -o myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 31: 𝐑𝐄𝐌𝐎𝐕𝐄 𝐃𝐔𝐏𝐋𝐈𝐂𝐀𝐓𝐄 𝐋𝐈𝐍𝐄𝐒 𝐈𝐍 𝐀 𝐅𝐈𝐋𝐄</h3>
-    <p>Solution: sort -u myfile.txt -o myfile.txt</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 32: 𝐂𝐎𝐍𝐕𝐄𝐑𝐓 𝐅𝐈𝐋𝐄 𝐂𝐎𝐍𝐓𝐄𝐍𝐓 𝐓𝐎 𝐔𝐏𝐄𝐑𝐂𝐀𝐒𝐄</h3>
-    <p>Solution: cat myfile.txt | tr '[:lower:]' '[:upper:]'</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 33: 𝐋𝐈𝐒𝐓 𝐑𝐔𝐍𝐍𝐈𝐍𝐆 𝐏𝐑𝐎𝐂𝐄𝐒𝐒</h3>
-    <p>Solution: ps aux</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 34: 𝐊𝐈𝐋𝐋 𝐏𝐑𝐎𝐂𝐄𝐒𝐒 𝐁𝐘 𝐏𝐈𝐃</h3>
-    <p>Solution: kill &lt;PID&gt;</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 35: 𝐊𝐈𝐋𝐋 𝐏𝐑𝐎𝐂𝐄𝐒𝐒 𝐁𝐘 𝐍𝐀𝐌𝐄</h3>
-    <p>Solution: pkill processname</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 36: 𝐂𝐇𝐄𝐂𝐊 𝐒𝐘𝐒𝐓𝐄𝐌 𝐔𝐏𝐓𝐈𝐌𝐄</h3>
-    <p>Solution: uptime</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 37: 𝐒𝐄𝐀𝐑𝐂𝐇 𝐅𝐎𝐑 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
-    <p>Solution: pkg search package-name</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 38: 𝐔𝐍𝐈𝐍𝐒𝐓𝐀𝐋𝐋 𝐀 𝐏𝐀𝐂𝐊𝐀𝐆𝐄</h3>
-    <p>Solution: pkg uninstall package-name</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 39: 𝐋𝐈𝐒𝐓 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐔𝐏𝐃𝐀𝐓𝐄𝐒 𝐅𝐎𝐑 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒 </h3>
-    <p>Solution: apt list --upgradable</p>
-</div>
-
-<div class="problem-solution">
-    <h3>Problem 40: 𝐔𝐏𝐆𝐑𝐀𝐃𝐄 𝐀𝐋𝐋 𝐏𝐀𝐂𝐊𝐀𝐆𝐄𝐒</h3>
-    <p>Solution: apt upgrade -y</p>
-</div>
-
-
+        // Terminal typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            createPetals();
+            
+            const typingElement = document.querySelector('.card p');
+            if (typingElement) {
+                const text = typingElement.textContent;
+                typingElement.textContent = '';
+                
+                let i = 0;
+                const typing = setInterval(function() {
+                    if (i < text.length) {
+                        typingElement.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                    }
+                }, 50);
+            }
+        });
+    </script>
 </body>
 </html>
